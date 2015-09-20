@@ -1,5 +1,5 @@
 
-# This project is a simple example using capsule.io.
+# This project is a simple example using capsule.io
 
 It's inspirated by the repo https://github.com/puniverse/capsule-runnable-war
 

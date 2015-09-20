@@ -53,18 +53,7 @@
 							<Args>$CAPSULE_JAR</Args>
 						</manifestEntries>
 					</archive>
-
-					<overlays>
-
-						<overlay>
-							<groupId>co.paralleluniverse</groupId>
-							<artifactId>capsule</artifactId>
-							<type>jar</type>
-						</overlay>
-
-					</overlays>
 				</configuration>
-
 			</plugin>
 
 			<plugin>
@@ -80,11 +69,27 @@
 						<configuration>
 							<artifactItems>
 								<artifactItem>
-
 									<groupId>co.paralleluniverse</groupId>
 									<artifactId>capsule-maven</artifactId>
 									<version>1.0</version>
+									<outputDirectory>${project.build.directory}/${project.artifactId}</outputDirectory>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
 
+					<execution>
+						<id>unzip</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>unpack</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>co.paralleluniverse</groupId>
+									<artifactId>capsule</artifactId>
+									<version>1.0</version>
 									<outputDirectory>${project.build.directory}/${project.artifactId}</outputDirectory>
 								</artifactItem>
 							</artifactItems>
